@@ -39,16 +39,17 @@ var a = [];
 Array.prototype.push = (function() {
   var native = Array.prototype.push;
   return function(item) {
+    this.log = this.log || '';
     this.log = this.log + item + ',';
     native.apply(this, arguments);
   }
 })();
 
 a.push(7);
-a.log; // "NaN,7,7,7,7,7,"
+a.log; // "7,"
 {% endhighlight %}
 
-Whoa, why does the log say it was called 6 times for a single `Array.push`?
+**Node:** If your log looks something like `"7,7,7,7,7,7,"`then you still have the overridden version of Array. This is a prime example why overriding the native method is a bad idea. 
 
 
 ###Selective logging
@@ -59,19 +60,17 @@ var logArray = Object.create(Array.prototype);
 
 logArray.push = function(item) {
   console.log('pushed ', item);
+  a.log = a.log || '';
   a.log = a.log + '' + item;
   Array.prototype.push.apply(this, arguments);
 };
 
 var a = Object.create(logArray);
 a.push(7); // "pushed  7"
-a.log; // "undefined77,7,7,7,7,7,"
+a.log; // "7"
 {% endhighlight %}
 
 You might have noticed that we can use `console.log` here. This is because we are not overriding the native `Array.push` that `console.log` uses. 
 
-You might have noticed the console log is only called once, but the log string has a bunch of 7s in it. This is the same oddness we saw with the log property.
+**Note:** If your log looks something like `"undefined77,7,7,7,7,7,"` then you still have the overridden version of Array. This is a prime example why overriding the native method is a bad idea.
 
-The `undefined` is easy to explain. It's because of the way we are adding the strings. The first time the assignement happens log is `undefined`. So adding a string to `undefined` just results in the word `'undefined'`.
-
-What about all the other 7s?
