@@ -14,7 +14,7 @@ Python is another language that only supports data hiding by naming convention. 
 
 > The main reason for making (nearly) everything discoverable was debugging: when debugging you often need to break through the abstractions (since bugs don't confine them to the nice abstractions you've created for your program :-) so I though it would be handy to be able to see anything from the debugger. And since the debugger is written in Python itself (for flexibility and a number of other reasons) I figured the same would apply to other forms of programming -- after all, sometimes debugging doesn't imply using a debugger, it may just imply printing a certain value. Again, too much data hiding would make things more complicated here.
 >
-> - [Guido van Rossum](https://plus.google.com/115212051037621986145/posts/7wpbQTPRWft?partnerid=gplp0)
+> [Guido van Rossum](https://plus.google.com/115212051037621986145/posts/7wpbQTPRWft?partnerid=gplp0)
 
 ## JavaScript
 
