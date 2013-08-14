@@ -1,3 +1,47 @@
+@import url(http://fonts.googleapis.com/css?family=Fauna+One|Special+Elite);
+@import url(flat_orange/jquery_ui.css);
+/**
+* Primary styles (custom section, non htmlboilerplate)
+* Author: Ethan Schoonover
+*/
+/* light is default mode, so pair with general html definition */
+html, .light {
+  background-color: #fdf6e3;
+  color: #657b83; }
+  html *, .light * {
+    color: #657b83; }
+  html h1, html h2, html h3, html h4, html h5, html h6, .light h1, .light h2, .light h3, .light h4, .light h5, .light h6 {
+    color: #586e75;
+    border-color: #657b83; }
+
+.dark {
+  background-color: #002b36;
+  color: #839496; }
+  .dark * {
+    color: #839496; }
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    color: #93a1a1;
+    border-color: #839496; }
+
+html * {
+  color-profile: sRGB;
+  rendering-intent: auto; }
+
+.site .header h1.title a {
+  color: #cb4b16; }
+
+.site .header h1.title a:hover {
+  color: #dc322f; }
+
+a, a:active {
+  color: #268bd2; }
+
+a:hover {
+  color: #6c71c4; }
+
+.site .meta {
+  color: #b58900; }
+
 /*****************************************************************************/
 /*
 /* Common
@@ -12,9 +56,7 @@ html, body {
   height: 100%; }
 
 body {
-  font: 13.34px Helvetica, Arial, sans-serif;
-  font-size: small;
-  text-align: center; }
+  @inclue font-normal; }
 
 h1, h2, h3, h4, h5, h6 {
   font-size: 100%; }

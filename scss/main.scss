@@ -1,3 +1,7 @@
+@import "color";
+@import "fonts";
+@import "flat_orange/jquery_ui.css";
+
 /*****************************************************************************/
 /*
 /* Common
@@ -14,9 +18,10 @@ html, body { height: 100%; }
 
 body {
   //background-color: #FFF;
-  font: 13.34px Helvetica, Arial, sans-serif;
-  font-size: small;
-  text-align: center;
+  // font: 13.34px Helvetica, Arial, sans-serif;
+  // font-size: small;
+  // text-align: center;
+  @inclue font-normal;
 }
 
 h1, h2, h3, h4, h5, h6 {
